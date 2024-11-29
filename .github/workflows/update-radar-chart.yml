@@ -1,0 +1,37 @@
+name: Update Radar Chart
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight (UTC)
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  generate-chart:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Java environment
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      # Step 3: Build and run the Java program
+      - name: Build and Run Java Program
+        run: |
+          mvn clean package
+          java -jar target/github-radar-chart.jar
+
+      # Step 4: Commit and push updated chart
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "ndiep233@gmail.com"
+          git config --local user.name "ndiep233"
+          git add radar_chart.png
+          git commit -m "Update radar chart"
+          git push
