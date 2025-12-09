@@ -16,9 +16,3 @@ Here are some ideas to get you started:
 -->
 [![Jayden Nguyen profile views](https://u8views.com/api/v1/github/profiles/54406682/views/day-week-month-total-count.svg)](https://u8views.com/github/diep233)
 
-<a href="https://github.com/diep233/github-readme-stats">
-  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=diep233" />
-</a>
-<a href="https://github.com/diep233/convoychat">
-  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=diep233&layout=compact&langs_count=8&card_width=320" />
-</a>
